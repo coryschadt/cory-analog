@@ -14,12 +14,22 @@ const Post = (props) => {
     name = 'Missing name',
     categories,
     authorImage,
+    mainImage,
     body = []
   } = props
   return (
     <article>
       <h1>{title}</h1>
       <span>By {name}</span>
+
+      {mainImage && 
+        <img
+          src={urlFor(mainImage)
+          .width(500)
+          .url()}
+        />
+      }
+
       {categories && (
         <ul>
           Posted in
@@ -49,6 +59,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  mainImage,
   body
 }`
 
