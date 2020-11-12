@@ -1,4 +1,5 @@
 // index.js
+import { useState } from 'react'
 import Link from 'next/link'
 import imageUrlBuilder from '@sanity/image-url'
 import groq from 'groq'
@@ -10,9 +11,20 @@ function urlFor (source) {
 
 const Index = (props) => {
   const { posts = [] } = props
+  const [open, setOpen] = useState(false)
   return (
     <div>
-      <h1>Welcome to a blog!</h1>
+      <h1>PLaying with next</h1>
+
+      <button onClick={ev => setOpen(!open)}>click me, I am a useState hook</button>
+      {open &&
+        <div>
+        Looks like I can do normal stuff here..
+        </div>}
+
+            <br />
+            <br />
+            <br />
       {posts.map(
         ({ _id, title = '', slug = '', _updatedAt = '', mainImage }) =>
           slug && (
