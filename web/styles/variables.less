@@ -1,0 +1,66 @@
+// General
+@gutter: 16px;
+@gutterR: 1rem;
+@gutterE: 1em;
+@border-radius: 4px;
+@container-width: 1200px;
+@transition: all 0.25s ease-in-out;
+@box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.1);
+@box-shadow-light: 0 2px 7px 0 rgba(40, 40, 40, 0.05);
+@drop-shadow: drop-shadow(@box-shadow);
+
+// Typography
+@font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+  Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+@line-height: 1.5;
+@font-size: 16px;
+
+// Colors
+@primary-color: #1b324a;
+@secondary-color: #438fff;
+
+@white: #fff;
+@black: #000;
+@grey: #e8e8e9;
+
+@light-blue: #eef7fe;
+@light-navy: #52677d;
+@light-grey: #f5f7fa;
+
+@body-color: @light-grey;
+@border-color: #ebebeb;
+@border-color-alt: #e1e7f0;
+@text-color: #272727;
+@text-color-alt: #7a7a7c;
+@heading-color: @primary-color;
+
+@success: #74d2b6;
+@warning: #fbb231;
+@error: #f67c48;
+
+// For Loading Indicator
+@dotWidth: 10px;
+@dotHeight: 10px;
+@dotRadius: @dotWidth / 2;
+
+@dotColor: @primary-color;
+@dotBgColor: @dotColor;
+@dotBeforeColor: @dotColor;
+@dotAfterColor: @dotColor;
+
+@dotSpacing: @dotWidth + @dotWidth / 2;
+
+// Responsive
+@desktop-max-width: 1200px;
+@desktop-min-width: 1025px;
+@tablet-max-width: 1024px;
+@tablet-min-width: 768px;
+@phone-max-width: 767px;
+@phone-min-width: 320px;
+@desktop: ~"screen and (min-width: @{desktop-min-width})";
+@tablet-desktop: ~"screen and (min-width: @{tablet-min-width})";
+@tablet: ~"screen and (min-width: @{tablet-min-width}) and (max-width: @{tablet-max-width})";
+@phone-tablet: ~"screen and (max-width: @{tablet-max-width})";
+@phone: ~"screen and (max-width: @{phone-max-width})";
+@phone-small: ~"screen and (max-width: @{phone-min-width})";
+@phone-to-desktop-max: ~"screen and (max-width: @{desktop-max-width})";

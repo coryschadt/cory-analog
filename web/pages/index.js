@@ -3,7 +3,7 @@
 import imageUrlBuilder from '@sanity/image-url'
 import groq from 'groq'
 import client from '../client'
-import './landing.less'
+import '../styles/index.less'
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
