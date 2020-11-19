@@ -23,7 +23,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'camera',
+        source: 'publishedAt',
         maxLength: 96
       }
     },

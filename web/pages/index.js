@@ -1,37 +1,28 @@
 // index.js
-import { useState } from 'react'
-import Link from 'next/link'
+
 import imageUrlBuilder from '@sanity/image-url'
 import groq from 'groq'
 import client from '../client'
+import './landing.less'
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
 }
 
-const Index = (props) => {
-  const { photos = [] } = props
+const Index = ({ photos = [] }) => {
   return (
     <div>
-      <h1>PLaying with next</h1>
-
       {photos.map(
-        ({ _id, title = '', slug = '', _updatedAt = '', mainImage }) =>
-          slug && (
-            <li key={_id}>
-
-              <img
-                src={urlFor(mainImage)
-                  .width(200)
-                  .url()}
-              />
-              <Link href='/photo/[slug]' as={`/photo/${slug.current}`}>
-                <a>{title}</a>
-
-              </Link>{' '}
-                ({new Date(_updatedAt).toDateString()})
-            </li>
-          )
+        ({ _id, title = '', slug = '', mainImage, camera, lens, film }) =>
+          <li key={_id}>
+            <h1>{camera}: {lens}</h1>
+            <h1>{film}</h1>
+            <img
+              src={urlFor(mainImage)
+                .width(200)
+                .url()}
+            />
+          </li>
       )}
     </div>
   )
